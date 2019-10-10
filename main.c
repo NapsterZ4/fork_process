@@ -9,19 +9,19 @@
 static int idata = 11;            /* Allocated in data segment */
 
 void collectCpuData(int data, pid_t id_cpu){
-    printf("CPU | data: %d, ID: %d\n", data, id_cpu);
+    printf("CPU | data: %d, ID: %d, PPID: %d\n", data, id_cpu, getppid());
 }
 
 void collectMemData(int data, pid_t id_ram){
-    printf("Memory | data: %d, ID: %d\n", data, id_ram);
+    printf("Memory | data: %d, ID: %d, PPID: %d\n", data, id_ram, getppid());
 }
 
 void collectNetData(int data, pid_t id_net) {
-    printf("Network | data: %d, ID: %d\n", data, id_net);
+    printf("Network | data: %d, ID: %d, PPID: %d\n", data, id_net, getppid());
 }
 
 void collectDiskData(int data, pid_t id_disk){
-    printf("Disk | data: %d, ID: %d\n", data, id_disk);
+    printf("Disk | data: %d, ID: %d, PPID: %d\n", data, id_disk, getppid());
 }
 
 void runChildLogic(int *initialNumber, int childId, pid_t id_cpu, pid_t id_ram, pid_t id_net, pid_t id_disk) {
